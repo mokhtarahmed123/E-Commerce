@@ -1,0 +1,57 @@
+﻿@model OrderWithCustomerAndProduct
+
+@{
+    ViewData["Title"] = "Update Order";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary mb-4"> Update Order</h2>
+
+    <form asp-action="SaveUpdatedOrder" asp-controller="OrderDetail" method="post" class="shadow p-4 rounded bg-light">
+         <div asp-validation-summary="All" ></div>
+        <input type="hidden" asp-for="OredrId" />
+
+        <div class="row mb-3">    
+            <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                <input asp-for="CustomerPhoneNumber" class="form-control"  />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Product Name</label>
+                <input asp-for="ProductName" class="form-control" readonly />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Quantity" class="form-label">Quantity</label>
+                <input asp-for="Quantity" class="form-control" id="quantityInput" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="TotalPrice" class="form-label">Total Price (EGP)</label>
+            <input asp-for="TotalPrice" class="form-control" id="totalPriceInput" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-success"> Save Changes</button>
+        <a asp-action="Index" asp-controller="OrderDetail" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+@* <p>Order ID: @Model.OredrId</p> *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        const unitPrice = @Model.TotalPrice / @Model.Quantity;
+        const quantityInput = document.getElementById("quantityInput");
+        const totalPriceInput = document.getElementById("totalPriceInput");
+
+        quantityInput.addEventListener("input", function () {
+            const qty = parseInt(quantityInput.value) || 0;
+            totalPriceInput.value = (qty * unitPrice).toFixed(2);
+        });
+    </script>
+}

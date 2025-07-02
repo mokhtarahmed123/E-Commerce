@@ -1,0 +1,77 @@
+﻿@model ProductViewModelWithCategory
+
+@{
+    ViewData["Title"] = "AddProduct";
+    // SelectList selectListItems = new SelectList(Model?.categories, "Id", "Name");
+}
+
+<h1>New Product</h1>
+<h4>Product</h4>
+<hr />
+
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-3">
+            <div class="card-body">
+                <h4 class="card-title mb-4 text-center">Add Product</h4>
+                <form asp-action="SaveAdd" asp-route-id="@Model.Id" asp-controller="Product">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Price" class="form-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Quantity" class="form-label"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="UrlImage" class="form-label"></label>
+                        <input asp-for="UrlImage" class="form-control" />
+                        <span asp-validation-for="UrlImage" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Category</label>
+                        <select id="CID" name="CID" class="form-select">
+                            @foreach (var Category in Model.categories)
+                            {
+                                if (Model.Id == Category.Id)
+                                {
+                                    <option value="@Category.Id" selected>@Category.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@Category.Id">@Category.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div class="d-grid">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <a asp-action="AllProduct" class="btn btn-dark">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

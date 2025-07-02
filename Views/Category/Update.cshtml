@@ -1,0 +1,21 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<form asp-action="SaveEdit" asp-controller="Category" method="post" asp-route-id="@Model.Id">
+    <div asp-validation-summary="All" class="text-danger"> </div>
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Edit" class="btn btn-primary" />
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

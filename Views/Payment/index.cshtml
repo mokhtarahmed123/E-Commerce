@@ -1,0 +1,23 @@
+﻿@model List<E_Commerce.Models.Payment>
+<partial name="_PartialHeader"></partial>
+<h2 class="text-center">Payments</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Payment Method</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Order?.Product?.Name</td>
+                <td>@p.PaymentMethod</td>
+                <td>@p.Order?.TotalPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<partial name="_PartialFooter"></partial>

@@ -1,0 +1,32 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "AllCategory";
+}
+    <partial name="_PartialHeader"></partial>
+<h1>AllCategory</h1>
+@if (User.IsInRole("Admin"))
+{
+    <a asp-action="AddCategory" asp-controller="Category" class="btn btn-primary">AddCategory </a>}
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td> <a value="Update" asp-action="Update" asp-route-id="@item.Id"  asp-controller="Category" class="btn btn-secondary"> Update   </a> </td>
+            <td> <a value="Delete" asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger"> Delete   </a> </td>
+            }
+        </tr>
+    }
+</table>
+
+<partial name="_PartialFooter"></partial>

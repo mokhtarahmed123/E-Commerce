@@ -1,0 +1,37 @@
+﻿@model UserApp
+@{
+    ViewData["Title"] = "My Profile";
+}
+<partial name="_PartialHeader"></partial>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">My Profile</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="table-light">
+                            <tr>
+                                <th>User Name</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.UserName</td>
+                                <td>@Model.PhoneNumber</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary me-2">Back to Home</a>
+                    <a asp-action="SignOut" asp-controller="Account" class="btn btn-outline-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="_PartialFooter">

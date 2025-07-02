@@ -1,0 +1,53 @@
+﻿<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        @* <a class="navbar-brand" href="#!">Start Bootstrap</a> *@
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" asp-action="Index" asp-controller="Home">Home</a></li>
+    
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="OrderDetail" asp-action="Index">Orders Detail </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="AllCategory">All Category </a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AllProduct">All Product  </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="MyProfile"> My Profile </a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Payment" asp-action="Index"> Payments  </a>
+                    </li>  <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="SignOut"> Sign Out   </a>
+                    </li>
+                     
+                }
+                else{
+                  
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Signup"> Sign up   </a>
+                </li>      <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="LogIn"> Log In   </a>
+                </li>
+              
+                }
+            </ul>
+
+
+            <form class="d-flex" asp-action="Index" asp-controller="OrderDetail">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+                </button>
+            </form>
+         
+        </div>
+    </div>
+</nav>

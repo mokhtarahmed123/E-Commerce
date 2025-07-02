@@ -1,0 +1,45 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Home";
+
+}
+<partial name="_PartialHeader"></partial>
+<h1>Home Page </h1>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model.OrderBy(x => Guid.NewGuid()).Take(6))
+{
+    <div class="col mb-5">
+        <div class="card h-100 shadow-sm">
+            <img class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" src="~/Image/@Url.Content(item.UrlImage)" alt="@item.Name" />
+
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <h5 class="fw-bolder">@item.Name</h5>
+                    <p>Price: $@item.Price</p>
+                    <p>Qty: @item.Quantity</p>
+                </div>
+            </div>
+
+            <div class="card-footer p-3 border-top-0 bg-transparent">
+                <div class="text-center">
+                    <a class="btn btn-outline-dark mt-auto w-100" asp-route-id="@item.Id" asp-action="CreateOrder" asp-controller="OrderDetail">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+        </div>
+    </div>
+</section>
+
+
+
+<partial name="_PartialFooter"></partial>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
