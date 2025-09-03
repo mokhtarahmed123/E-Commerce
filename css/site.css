@@ -1,0 +1,861 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* ===== Login Page Styling ===== */
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    padding: 30px;
+}
+
+.login-card {
+    background: #fff;
+    padding: 35px;
+    width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+.input-group-text {
+    border-radius: 12px 0 0 12px;
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    border: 1px solid #ced4da;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    border-radius: 0 12px 12px 0;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== Signup Page Styling ===== */
+.signup-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6610f2, #0d6efd);
+    padding: 30px;
+}
+
+.signup-card {
+    background: #fff;
+    padding: 35px;
+    width: 450px;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.signup-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #6610f2, #0d6efd);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+.input-group-text {
+    border-radius: 12px 0 0 12px;
+    background-color: #f8f9fa;
+    color: #6610f2;
+    border: 1px solid #ced4da;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    border-radius: 0 12px 12px 0;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== Add Category Page Styling ===== */
+.add-category-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #20c997, #0d6efd);
+    padding: 30px;
+}
+
+.add-category-card {
+    background: #fff;
+    padding: 35px;
+    width: 450px;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+    .add-category-card:hover {
+        transform: scale(1.02);
+    }
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    background: #e9f7ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: #0d6efd;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #20c997);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+.input-group-text {
+    border-radius: 12px 0 0 12px;
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    border: 1px solid #ced4da;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    border-radius: 0 12px 12px 0;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== All Categories Page Styling ===== */
+.all-category-container {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+/* Table Styling */
+.table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+    .table thead {
+        background-color: #0d6efd;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+
+    .table tbody tr {
+        transition: all 0.2s ease;
+    }
+
+        .table tbody tr:hover {
+            background-color: #f1f5ff;
+            transform: scale(1.01);
+        }
+
+    .table tbody td {
+        padding: 12px;
+        vertical-align: middle;
+    }
+
+/* Buttons */
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        transform: scale(1.05);
+    }
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .btn-danger:hover {
+        background-color: #b52a37;
+        transform: scale(1.05);
+    }
+/* ===== Update Category Styling ===== */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+/* Back button */
+.btn-outline-dark:hover {
+    background-color: #212529;
+    color: white;
+}
+/* ===== Home Page Product Styling ===== */
+
+/* Title Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Product Card Styling */
+.product-card {
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+/* Product Image Container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+    .image-container img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
+        filter: brightness(80%);
+    }
+
+/* Overlay on Hover */
+.overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.image-container:hover .overlay {
+    bottom: 0;
+}
+
+.overlay .btn {
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Price Styling */
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #198754;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+/* ===== Orders Page Styling ===== */
+
+/* Title Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Table Gradient Header */
+.table-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Table Styling */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table-hover tbody tr {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+    .table-hover tbody tr:hover {
+        transform: scale(1.02);
+        background-color: rgba(13, 110, 253, 0.05);
+    }
+
+/* Buttons */
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+
+/* Shadow Effects for Buttons */
+.btn-success, .btn-dark, .btn-danger {
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .btn-success:hover, .btn-dark:hover, .btn-danger:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+/* ===== Confirm Order Page Styling ===== */
+
+/* Title Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Confirm Card Styling */
+.confirm-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .confirm-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+/* Product Image */
+.product-image {
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+    .product-image:hover {
+        transform: scale(1.05);
+    }
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+
+/* Input Styling */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+/* ===== Update Order Page Styling ===== */
+
+/* Gradient Title */
+.text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Card Styling */
+.update-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .update-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+/* Buttons Hover Effect */
+.btn-outline-dark:hover {
+    background-color: #212529;
+    color: #fff;
+}
+/* ===== Payments Page Styling ===== */
+
+.payment-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .payment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+/* Gradient Header */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+
+/* Table Styling */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.08);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.table th {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+/* Payment Method Badge */
+.badge {
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Icons */
+.bi {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* Empty State Styling */
+.alert-info {
+    font-size: 1rem;
+    background-color: #e9f5ff;
+    border: 1px solid #b6e0fe;
+    color: #0d6efd;
+    font-weight: 600;
+}
+/* ===== Payment Method Page Styling ===== */
+
+/* Payment Card */
+.payment-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+    .payment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+/* Gradient Header */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+
+/* Inputs & Selects */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #198754, #0d6efd);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    font-size: 1.05rem;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+/* Back Button */
+.btn-outline-dark:hover {
+    background-color: #212529;
+    color: white;
+}
+/* ===== Product Form Styling ===== */
+
+/* Card Styling */
+.product-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+/* Gradient Header */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+
+/* Inputs & Selects */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #198754, #0d6efd);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    font-size: 1.05rem;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+/* Back Button */
+.btn-outline-dark:hover {
+    background-color: #212529;
+    color: white;
+}
+/* ===== All Products Page Styling ===== */
+
+/* Product Card */
+.product-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+/* Product Image */
+.img-container {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+
+.product-card img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #198754, #0d6efd);
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+/* Icon Styling */
+h2 i,
+.btn i {
+    margin-right: 5px;
+}

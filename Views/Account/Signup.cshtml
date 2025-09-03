@@ -1,0 +1,144 @@
+﻿@* @model E_Commerce.ViewModel.SignUpViewModel *@
+
+@* @{ *@
+@*     ViewData["Title"] = "Signup"; *@
+@* } *@
+
+
+@* <div class="container mt-5"> *@
+@*     <div class="row justify-content-center"> *@
+@*         <div class="col-md-6"> *@
+@*             <div class="card shadow-lg rounded-4"> *@
+@*                 <div class="card-header text-center bg-primary text-white"> *@
+@*                     <h3 class="mb-0">Create Account</h3> *@
+@*                 </div> *@
+@*                 <div class="card-body"> *@
+@*                     <form asp-action="SignupSave" asp-controller="Account" method="post"> *@
+@*                         <div asp-validation-summary="All" class="text-danger mb-3"></div> *@
+
+@*                         <div class="form-group mb-3"> *@
+@*                             <label asp-for="UserName" class="form-label"></label> *@
+@*                             <input asp-for="UserName" class="form-control" placeholder="Enter your username" /> *@
+@*                             <span asp-validation-for="UserName" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="form-group mb-3"> *@
+@*                             <label asp-for="PhoneNumber" class="form-label"></label> *@
+@*                             <input asp-for="PhoneNumber" class="form-control" placeholder="e.g., 01012345678" /> *@
+@*                             <span asp-validation-for="PhoneNumber" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="form-group mb-3"> *@
+@*                             <label asp-for="Password" class="form-label"></label> *@
+@*                             <input asp-for="Password" class="form-control" placeholder="Enter password" type="password" /> *@
+@*                             <span asp-validation-for="Password" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="form-group mb-4"> *@
+@*                             <label asp-for="ConfirmPassword" class="form-label"></label> *@
+@*                             <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm password" type="password" /> *@
+@*                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
+@*                         </div> *@
+
+@*                         <div class="d-grid"> *@
+@*                             <button type="submit" class="btn btn-primary">Sign Up</button> *@
+@*                         </div> *@
+@*                     </form> *@
+@*                 </div> *@
+@*                 <div class="card-footer text-center"> *@
+@*                     <a asp-action="Login" asp-controller="Account" class="btn btn-outline-success me-2">Already have an account?</a> *@
+@*                     <a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark">Back to Home</a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     @{ *@
+@*         await Html.RenderPartialAsync("_ValidationScriptsPartial"); *@
+@*     } *@
+@* } *@
+@model E_Commerce.ViewModel.SignUpViewModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="signup-container d-flex justify-content-center align-items-center">
+    <div class="signup-card shadow-lg rounded-4">
+        <div class="text-center mb-4">
+            <img src="~/images/logo.png" alt="Logo" class="signup-logo">
+            <h3 class="fw-bold mt-3">Create Your Account 🚀</h3>
+            <p class="text-muted">Join us today and start shopping smarter!</p>
+        </div>
+
+        <form asp-action="SignupSave" asp-controller="Account" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <!-- Username -->
+            <div class="form-group mb-3">
+                <label asp-for="UserName" class="form-label fw-semibold"></label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-person-fill"></i></span>
+                    <input asp-for="UserName" class="form-control" placeholder="Enter your username" />
+                </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group mb-3">
+                <label asp-for="PhoneNumber" class="form-label fw-semibold"></label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-telephone-fill"></i></span>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="e.g., 01012345678" />
+                </div>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label fw-semibold"></label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-lock-fill"></i></span>
+                    <input asp-for="Password" class="form-control" placeholder="Enter your password" type="password" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group mb-4">
+                <label asp-for="ConfirmPassword" class="form-label fw-semibold"></label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-shield-lock-fill"></i></span>
+                    <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm password" type="password" />
+                </div>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <!-- Sign Up Button -->
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-gradient fw-bold">
+                    <i class="bi bi-person-plus-fill me-1"></i> Sign Up
+                </button>
+            </div>
+        </form>
+
+        <!-- Footer Links -->
+        <div class="text-center mt-3">
+            <p class="mb-1">
+                Already have an account?
+                <a asp-action="Login" asp-controller="Account" class="text-decoration-none fw-semibold">Login here</a>
+            </p>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary btn-sm mt-2">
+                <i class="bi bi-house-door-fill"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

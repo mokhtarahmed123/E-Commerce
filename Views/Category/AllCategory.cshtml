@@ -1,0 +1,111 @@
+﻿@* @model List<Category> *@
+@* @{ *@
+@*     ViewData["Title"] = "AllCategory"; *@
+@* } *@
+@*     <partial name="_PartialHeader"></partial> *@
+@* <h1>AllCategory</h1> *@
+@* @if (User.IsInRole("Admin")) *@
+@* { *@
+@*     <a asp-action="AddCategory" asp-controller="Category" class="btn btn-primary">AddCategory </a>} *@
+@* <table class="table table-hover table-bordered"> *@
+@*     <tr> *@
+@*         <th>Number</th> *@
+@*         <th>Name</th> *@
+        
+@*         <th></th> *@
+@*         <th></th> *@
+@*     </tr> *@
+@*     @foreach (var item in Model) *@
+@*     { *@
+@*         <tr> *@
+@*             <td>@item.Id</td> *@
+@*             <td>@item.Name</td> *@
+@*             @if (User.IsInRole("Admin")) *@
+@*             { *@
+@*             <td> <a value="Update" asp-action="Update" asp-route-id="@item.Id"  asp-controller="Category" class="btn btn-secondary"> Update   </a> </td> *@
+@*             <td> <a value="Delete" asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger"> Delete   </a> </td> *@
+@*             } *@
+@*         </tr> *@
+@*     } *@
+@* </table> *@
+
+@* <partial name="_PartialFooter"></partial> *@
+@model List<Category>
+
+@{
+    ViewData["Title"] = "All Categories";
+}
+
+<partial name="_PartialHeader"></partial>
+
+<div class="container all-category-container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-dark">
+            <i class="bi bi-tags-fill text-primary"></i> All Categories
+        </h2>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="AddCategory" asp-controller="Category" class="btn btn-gradient fw-bold shadow-sm">
+                <i class="bi bi-plus-circle me-1"></i> Add Category
+            </a>
+        }
+    </div>
+
+    <div class="card shadow-lg rounded-4 p-3">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>Category Name</th>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <th class="text-center">Update</th>
+                            <th class="text-center">Delete</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center fw-bold">@item.Id</td>
+                                <td>@item.Name</td>
+
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <td class="text-center">
+                                        <a asp-action="Update" asp-controller="Category" asp-route-id="@item.Id"
+                                           class="btn btn-warning btn-sm shadow-sm">
+                                            <i class="bi bi-pencil-square"></i> Update
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id"
+                                           class="btn btn-danger btn-sm shadow-sm"
+                                           onclick="return confirm('Are you sure you want to delete this category?')">
+                                            <i class="bi bi-trash3-fill"></i> Delete
+                                        </a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted">
+                                <i class="bi bi-info-circle"></i> No categories found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<partial name="_PartialFooter"></partial>

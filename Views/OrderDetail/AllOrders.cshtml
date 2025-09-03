@@ -1,0 +1,134 @@
+﻿@* @model List<OrderWithCustomerAndProduct> *@
+
+@* @{ *@
+@*     ViewData["Title"] = "Your Orders"; *@
+@* } *@
+@* <partial name="_PartialHeader"></partial> *@
+@* <div class="container mt-5"> *@
+@*     <h2 class="text-primary mb-4">🛒 Your Orders</h2> *@
+
+@*     @if (Model != null && Model.Any()) *@
+@*     { *@
+@*         <div class="card shadow rounded-4 border-0"> *@
+@*             <div class="card-body"> *@
+@*                 <table class="table table-hover table-bordered align-middle text-center"> *@
+@*                     <thead class="table-dark"> *@
+@*                         <tr> *@
+@*                             <th scope="col">#</th> *@
+@*                             <th scope="col">Product Name</th> *@
+@*                             <th scope="col">Quantity</th> *@
+@*                             <th scope="col">Total Price</th> *@
+@*                             <th scope="col">Phone</th> *@
+@*                             <th></th> *@
+@*                             <th></th> *@
+@*                             <th></th> *@
+@*                         </tr> *@
+@*                     </thead> *@
+@*                     <tbody> *@
+@*                         @for (int i = 0; i < Model.Count; i++) *@
+@*                         { *@
+@*                             <tr> *@
+@*                                 <th scope="row">@(@i + 1)</th> *@
+@*                                 <td>@Model[i].ProductName</td> *@
+@*                                 <td>@Model[i].Quantity</td> *@
+@*                                 <td>@Model[i].TotalPrice.ToString("N2") EGP</td> *@
+@*                                 <td>@Model[i].CustomerPhoneNumber</td> *@
+@*                                 <td> <a asp-action="PaymentMethod" asp-controller="Payment" class="btn btn-success" asp-route-id="@Model[i].OredrId"> Confirm Payment </a> </td> *@
+@*                                 <td> <a asp-action="UpdateOrder" asp-controller="OrderDetail" asp-route-id="@Model[i].OredrId" class="btn btn-dark">Update</a>   </td> *@
+@*                                 <td> <a asp-action="Delete" asp-controller="OrderDetail" asp-route-id="@Model[i].OredrId" class="btn btn-danger" > Delete </a> </td> *@
+@*                             </tr> *@
+@*                         } *@
+@*                     </tbody> *@
+@*                 </table> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@*     else *@
+@*     { *@
+@*         <div class="alert alert-info text-center p-4 rounded shadow-sm"> *@
+@*             You have no orders yet. *@
+@*         </div> *@
+@*     } *@
+
+@*     <partial name="_PartialFooter"> *@
+@* </div> *@
+@model List<OrderWithCustomerAndProduct>
+
+@{
+    ViewData["Title"] = "Your Orders";
+}
+<partial name="_PartialHeader"></partial>
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold display-5 text-gradient">
+            <i class="bi bi-bag-check-fill"></i> Your Orders
+        </h1>
+        <p class="text-muted fs-5">Track your orders, confirm payments, or manage your items easily.</p>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="card shadow-lg rounded-4 border-0">
+            <div class="card-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-center">
+                        <thead class="table-gradient text-white">
+                            <tr>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                <th>Phone</th>
+                                <th colspan="3">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                <tr>
+                                    <td class="fw-bold">@(@i + 1)</td>
+                                    <td>@Model[i].ProductName</td>
+                                    <td>
+                                        <span class="badge bg-info px-3 py-2 fs-6">@Model[i].Quantity</span>
+                                    </td>
+                                    <td class="fw-semibold text-success">@Model[i].TotalPrice.ToString("N2") EGP</td>
+                                    <td>@Model[i].CustomerPhoneNumber</td>
+                                    <td>
+                                        <a asp-action="PaymentMethod" asp-controller="Payment" asp-route-id="@Model[i].OredrId" class="btn btn-success btn-sm shadow-sm">
+                                            <i class="bi bi-credit-card-fill"></i> Confirm
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="UpdateOrder" asp-controller="OrderDetail" asp-route-id="@Model[i].OredrId" class="btn btn-dark btn-sm shadow-sm">
+                                            <i class="bi bi-pencil-square"></i> Update
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="Delete" asp-controller="OrderDetail" asp-route-id="@Model[i].OredrId" class="btn btn-danger btn-sm shadow-sm">
+                                            <i class="bi bi-trash-fill"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center p-5 rounded-4 shadow-sm">
+            <i class="bi bi-info-circle fs-4"></i> You have no orders yet.
+        </div>
+    }
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-gradient btn-lg shadow">
+            <i class="bi bi-arrow-left-circle"></i> Back to Home
+        </a>
+    </div>
+</div>
+
+<partial name="_PartialFooter"></partial>

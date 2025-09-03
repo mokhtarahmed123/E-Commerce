@@ -1,0 +1,71 @@
+﻿@* @model Category *@
+@* @{ *@
+@*     ViewData["Title"] = "Update"; *@
+@* } *@
+
+@* <h1>Update</h1> *@
+@* <form asp-action="SaveEdit" asp-controller="Category" method="post" asp-route-id="@Model.Id"> *@
+@*     <div asp-validation-summary="All" class="text-danger"> </div> *@
+@*     <input type="hidden" asp-for="Id" /> *@
+
+@*     <div> *@
+@*         <label asp-for="Name"></label> *@
+@*         <input asp-for="Name" class="form form-control" /> *@
+@*         <span asp-validation-for="Name" class="text-danger"></span> *@
+@*     </div> *@
+@*     <input type="submit" value="Edit" class="btn btn-primary" /> *@
+@* </form> *@
+@* @section Scripts { *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+@* } *@
+@model Category
+@{
+    ViewData["Title"] = "Update Category";
+}
+
+<partial name="_PartialHeader"></partial>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded-4 border-0">
+                <div class="card-header bg-gradient-primary text-white text-center rounded-top">
+                    <h3 class="mb-0">
+                        <i class="bi bi-pencil-square me-2"></i> Update Category
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="SaveEdit" asp-controller="Category" method="post" asp-route-id="@Model.Id">
+                        <div asp-validation-summary="All" class="alert alert-danger mb-3"></div>
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-semibold">
+                                <i class="bi bi-tag-fill text-primary"></i> Category Name
+                            </label>
+                            <input asp-for="Name" class="form-control form-control-lg shadow-sm" placeholder="Enter category name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-gradient fw-bold shadow">
+                                <i class="bi bi-check-circle-fill me-1"></i> Save Changes
+                            </button>
+                            <a asp-action="AllCategory" asp-controller="Category" class="btn btn-outline-dark fw-semibold shadow-sm">
+                                <i class="bi bi-arrow-left-circle"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_PartialFooter"></partial>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

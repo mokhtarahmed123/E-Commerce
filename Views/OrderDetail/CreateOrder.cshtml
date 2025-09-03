@@ -1,0 +1,155 @@
+﻿@* @model OrderWithCustomerAndProduct *@
+
+@* <h2 class="text-center">Confirm Your Order</h2> *@
+
+@* <div class="card p-4" style="max-width: 400px; margin: auto;"> *@
+@*     <img src="@Model.UrlImage" class="img-fluid mb-3" /> *@
+@*     <h4>@Model.ProductName</h4> *@
+@*     <p>Unit Price: <span id="unitPrice">@Model.TotalPrice</span> EGP</p> *@
+
+@*     <form asp-action="SaveCreate" asp-controller="OrderDetail" method="post"> *@
+@*         <div asp-validation-summary="All"></div> *@
+@*         <input type="hidden" asp-for="ProductId" /> *@
+@*         <input type="hidden" asp-for="ProductName" /> *@
+@*         <img src="@Url.Content($"~/Image/{Model.UrlImage}")" class="img-fluid mb-3" /> *@
+@*         <input type="hidden" asp-for="Price" value="@Model.TotalPrice" /> *@
+@*         <input type="hidden" asp-for="CustomerId" /> *@
+
+@*         <div class="form-group"> *@
+@*             <label asp-for="Quantity">Quantity</label> *@
+@*             <input asp-for="Quantity" id="quantityInput" class="form-control" type="number" min="1" value="@Model.Quantity" /> *@
+@*             <span asp-validation-for="Quantity" class="text-danger"></span> *@
+@*         </div> *@
+
+@*         <div class="form-group mt-3"> *@
+@*             <label>Total Price:</label> *@
+@*             <span id="totalPrice">@Model.TotalPrice</span> EGP *@
+@*         </div> *@
+
+@*         <input type="hidden" asp-for="TotalPrice" id="TotalPrice" /> *@
+
+@*         <button type="submit" class="btn btn-success w-100 mt-3">Confirm Order</button> *@
+@*     </form> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+
+@*     <script> *@
+@*         document.addEventListener("DOMContentLoaded", function () { *@
+@*             const quantityInput = document.getElementById("quantityInput"); *@
+@*             const unitPrice = parseFloat(document.getElementById("unitPrice").innerText); *@
+@*             const totalPriceSpan = document.getElementById("totalPrice"); *@
+@*             const totalPriceInput = document.getElementById("TotalPrice"); *@
+
+@*             function updateTotal() { *@
+@*                 let qty = parseInt(quantityInput.value); *@
+@*                 if (isNaN(qty) || qty < 1) qty = 1; *@
+@*                 const total = qty * unitPrice; *@
+@*                 totalPriceSpan.innerText = total.toFixed(2); *@
+@*                 totalPriceInput.value = total.toFixed(2); *@
+@*             } *@
+
+@*             quantityInput.addEventListener("input", updateTotal); *@
+@*             updateTotal(); *@
+@*         }); *@
+@*     </script> *@
+@* } *@
+@model OrderWithCustomerAndProduct
+
+@{
+    ViewData["Title"] = "Confirm Your Order";
+}
+
+<partial name="_PartialHeader"></partial>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg rounded-4 border-0 p-4 confirm-card">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-gradient">
+                        <i class="bi bi-bag-check-fill"></i> Confirm Your Order
+                    </h2>
+                    <p class="text-muted">Review your product and confirm your order below.</p>
+                </div>
+
+                <!-- Product Image -->
+                <div class="text-center mb-3">
+                    <img src="@Url.Content($"~/Image/{Model.UrlImage}")"
+                         class="img-fluid rounded-3 shadow-sm product-image"
+                         alt="@Model.ProductName" />
+                </div>
+
+                <!-- Product Details -->
+                <div class="text-center mb-3">
+                    <h4 class="fw-bold">@Model.ProductName</h4>
+                    <p class="fs-5 text-success">Unit Price: <span id="unitPrice">@Model.TotalPrice</span> EGP</p>
+                </div>
+
+                <!-- Order Form -->
+                <form asp-action="SaveCreate" asp-controller="OrderDetail" method="post">
+                    <div asp-validation-summary="All" class="alert alert-danger"></div>
+                    <input type="hidden" asp-for="ProductId" />
+                    <input type="hidden" asp-for="ProductName" />
+                    <input type="hidden" asp-for="Price" value="@Model.TotalPrice" />
+                    <input type="hidden" asp-for="CustomerId" />
+
+                    <!-- Quantity Input -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Quantity" class="fw-semibold">
+                            <i class="bi bi-cart-plus"></i> Quantity
+                        </label>
+                        <input asp-for="Quantity" id="quantityInput"
+                               class="form-control form-control-lg shadow-sm"
+                               type="number" min="1" value="@Model.Quantity" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="form-group mb-4">
+                        <label class="fw-bold fs-5">Total Price:</label>
+                        <span id="totalPrice" class="text-primary fs-5">@Model.TotalPrice</span> EGP
+                        <input type="hidden" asp-for="TotalPrice" id="TotalPrice" />
+                    </div>
+
+                    <!-- Confirm Button -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-gradient fw-bold shadow">
+                            <i class="bi bi-bag-plus-fill"></i> Confirm Order
+                        </button>
+                        <a asp-action="YourOrders" asp-controller="OrderDetail" class="btn btn-outline-dark shadow-sm">
+                            <i class="bi bi-arrow-left-circle"></i> Back to Orders
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_PartialFooter"></partial>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const quantityInput = document.getElementById("quantityInput");
+            const unitPrice = parseFloat(document.getElementById("unitPrice").innerText);
+            const totalPriceSpan = document.getElementById("totalPrice");
+            const totalPriceInput = document.getElementById("TotalPrice");
+
+            function updateTotal() {
+                let qty = parseInt(quantityInput.value);
+                if (isNaN(qty) || qty < 1) qty = 1;
+                const total = qty * unitPrice;
+                totalPriceSpan.innerText = total.toFixed(2);
+                totalPriceInput.value = total.toFixed(2);
+            }
+
+            quantityInput.addEventListener("input", updateTotal);
+            updateTotal();
+        });
+    </script>
+}
