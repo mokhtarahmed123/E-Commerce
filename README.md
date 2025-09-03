@@ -307,15 +307,22 @@ jobs:
 * [ ] Webhooks for payment gateways (Stripe/PayMob/etc.)
 * [ ] Inventory reservations & backorders
 * \[
-<img width="528" height="455" alt="Screenshot 2025-07-27 070039" src="https://github.com/user-attachments/assets/1416c28b-564c-4ce8-aea0-b46dfb569032" />
-<img width="579" height="360" alt="Screenshot 2025-07-27 070056" src="https://github.com/user-attachments/assets/14cfe39c-f522-4804-87ef-b01ccff640bd" />
-<img width="1396" height="636" alt="Screenshot 2025-07-27 070136" src="https://github.com/user-attachments/assets/2e1337aa-87e8-4c83-b721-b50d7c6f0915" />
-<img width="1400" height="373" alt="Screenshot 2025-07-27 070155" src="https://github.com/user-attachments/assets/c671236b-3d9f-4bc2-89b7-0e31b29ed3d6" />
-<img width="1514" height="380" alt="Screenshot 2025-07-27 070207" src="https://github.com/user-attachments/assets/afb3a440-1565-4d2f-a4e6-af797cd3b0b5" />
-<img width="1496" height="623" alt="Screenshot 2025-07-27 070230" src="https://github.com/user-attachments/assets/27506e78-a9a7-45c0-9404-c9d38b44a82d" />
-<img width="569" height="513" alt="Screenshot 2025-07-27 070502" src="https://github.com/user-attachments/assets/a656ea23-bcbf-4183-bad4-0662615d9721" />
-<img width="1128" height="249" alt="Screenshot 2025-07-27 070519" src="https://github.com/user-attachments/assets/07712eec-3c34-429b-b2a2-de312fac0dbe" />
+<img width="1886" height="911" alt="Screenshot 2025-09-04 004407" src="https://github.com/user-attachments/assets/0dd00abf-d48d-4449-954b-18650c610705" />
+<img width="1884" height="950" alt="Screenshot 2025-09-04 004517" src="https://github.com/user-attachments/assets/3717de73-c52e-4887-ac82-00e18d0de5f2" />
+<img width="1910" height="934" alt="Screenshot 2025-09-04 004536" src="https://github.com/user-attachments/assets/b6ff0e92-d3b6-49a8-8be7-98f3df1ead91" />
+<img width="1919" height="934" alt="Screenshot 2025-09-04 004703" src="https://github.com/user-attachments/assets/5a024410-79ba-405d-8456-c57368f6a775" />
+<img width="1903" height="947" alt="Screenshot 2025-09-04 004726" src="https://github.com/user-attachments/assets/ea4affda-2ab4-44de-872f-81dc08e9b345" />
+<img width="1911" height="949" alt="Screenshot 2025-09-04 004747" src="https://github.com/user-attachments/assets/8d8c8de1-d35f-4bff-82a9-ba644cd1f331" />
+<img width="1914" height="929" alt="Screenshot 2025-09-04 004815" src="https://github.com/user-attachments/assets/72cbb081-4283-4c51-a0bc-8b12b57e1e7f" />
+<img width="1915" height="930" alt="Screenshot 2025-09-04 004835" src="https://github.com/user-attachments/assets/2dd0512c-90b2-4c88-9b92-a769ad40db46" />
+<img width="1909" height="945" alt="Screenshot 2025-09-04 004901" src="https://github.com/user-attachments/assets/89a61003-5fd7-418d-bbed-8ff9ccccf300" />
+<img width="1911" height="953" alt="Screenshot 2025-09-04 004925" src="https://github.com/user-attachments/assets/cad7380b-1668-4b1c-99c6-1f295499b6b5" />
+<img width="1918" height="947" alt="Screenshot 2025-09-04 005014" src="https://github.com/user-attachments/assets/f06f66ab-51af-4a72-bbc9-a05ded0221b1" />
+<img width="1882" height="955" alt="Screenshot 2025-09-04 005036" src="https://github.com/user-attachments/assets/1dd080ca-f6b4-4125-b984-50d7752d7fa3" />
+<img width="1887" height="937" alt="Screenshot 2025-09-04 005053" src="https://github.com/user-attachments/assets/c8caf10d-1470-46ff-9960-10f2db18558c" />
+<img width="1913" height="951" alt="Screenshot 2025-09-04 005119" src="https://github.com/user-attachments/assets/cd054402-3db8-4a8f-86f2-ebf13f4a13ec" />
+<img width="1919" height="949" alt="Screenshot 2025-09-04 005159" src="https://github.com/user-attachments/assets/39157f8c-58c0-406f-a416-e0bb13d45733" />
 
-<img width="1254" height="349" alt="Screenshot 2025-07-27 070535" src="https://github.com/user-attachments/assets/c501b71b-15e1-4585-8786-d6fe9bc99371" />
+
 
 
